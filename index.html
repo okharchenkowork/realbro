@@ -1,1 +1,234 @@
-55555
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>realbro</title>
+  <style>
+    :root {
+      --bg: #f3f4f6;
+      --surface: rgba(255, 255, 255, 0.88);
+      --text: #111111;
+      --muted: #5f5a55;
+      --shadow: #090909;
+      --stroke: #1d1d1d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(17, 17, 17, 0.05), transparent 28rem),
+        linear-gradient(180deg, #fbfbfc 0%, var(--bg) 48%, #eceef1 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(100%, 31rem);
+      margin: 0 auto;
+      padding: 2.5rem 1rem 2rem;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border: 1.5px solid rgba(17, 17, 17, 0.08);
+      border-radius: 2rem;
+      padding: 2rem 1.25rem 1.5rem;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 248, 250, 0.85));
+      box-shadow: 0 1.1rem 2.6rem rgba(30, 35, 45, 0.1);
+      text-align: center;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -6rem auto auto -4rem;
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(17, 17, 17, 0.06), transparent 68%);
+      pointer-events: none;
+    }
+
+    .avatar-wrap {
+      width: 7.5rem;
+      margin: 0 auto 1rem;
+    }
+
+    .avatar {
+      width: 7.5rem;
+      height: 7.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 4px solid #fff8f0;
+      box-shadow: 0 0.8rem 1.5rem rgba(34, 21, 16, 0.15);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 2.7rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .cta-list {
+      margin: 2rem 0 0;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .cta-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 4.35rem;
+      padding: 1rem 1.4rem;
+      border: 2px solid var(--stroke);
+      border-radius: 999px;
+      background: linear-gradient(180deg, #ffffff, #eef1f4);
+      font-size: 1.18rem;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: 0 0.5rem 0 0 var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .cta-button:hover,
+    .cta-button:focus-visible {
+      transform: translateY(0.2rem);
+      box-shadow: 0 0.3rem 0 0 var(--shadow);
+      background: linear-gradient(180deg, #f8fafc, #e8ecf0);
+      outline: none;
+    }
+
+    .contacts {
+      margin-top: 2rem;
+      padding: 1.25rem 1rem 0;
+      text-align: center;
+    }
+
+    .contacts-title {
+      margin: 0 0 1rem;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      width: 3.55rem;
+      height: 3.55rem;
+      border-radius: 50%;
+      border: 1.8px solid var(--stroke);
+      background: rgba(255, 255, 255, 0.78);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0.35rem 0 0 var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .contact-link:hover,
+    .contact-link:focus-visible {
+      transform: translateY(0.18rem);
+      box-shadow: 0 0.18rem 0 0 var(--shadow);
+      background: #f7f9fb;
+      outline: none;
+    }
+
+    .contact-link svg {
+      width: 1.45rem;
+      height: 1.45rem;
+      fill: #111111;
+    }
+
+    @media (max-width: 480px) {
+      .page {
+        padding-top: 1.5rem;
+      }
+
+      .card {
+        padding: 1.7rem 1rem 1.35rem;
+        border-radius: 1.7rem;
+      }
+
+      .cta-button {
+        min-height: 4rem;
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="avatar-wrap">
+        <img
+          class="avatar"
+          src="./67190461_345632749712174_7445715159286284288_n.jpg"
+          alt="Portrait of realbro"
+        >
+      </div>
+
+      <div class="cta-list">
+        <a class="cta-button" href="https://example.com/latest-video" target="_blank" rel="noreferrer">
+          🤙 2 грн
+        </a>
+        <a class="cta-button" href="https://example.com/subscribe" target="_blank" rel="noreferrer">
+          💪 5 грн
+        </a>
+        <a class="cta-button" href="https://example.com/contact" target="_blank" rel="noreferrer">
+          🤯 інша сума
+        </a>
+      </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+      <p class="contacts-title">Contacts</p>
+      <div class="contact-row">
+        <a class="contact-link" href="https://instagram.com/realbro.demo" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2Zm10.1 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z"/>
+          </svg>
+        </a>
+        <a class="contact-link" href="mailto:hello@realbro-demo.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.2l9 5.8 9-5.8V7Zm18 10V9.6l-8.5 5.5a1 1 0 0 1-1 0L3 9.6V17Z"/>
+          </svg>
+        </a>
+        <a class="contact-link" href="tel:+380991234567" aria-label="Phone">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.6 3h3.1a1 1 0 0 1 1 .8l.7 3.5a1 1 0 0 1-.3.9L9.4 9.9a13.2 13.2 0 0 0 4.7 4.7l1.7-1.7a1 1 0 0 1 .9-.3l3.5.7a1 1 0 0 1 .8 1v3.1a1 1 0 0 1-.9 1A17.5 17.5 0 0 1 5.6 3.9a1 1 0 0 1 1-.9Z"/>
+          </svg>
+        </a>
+      </div>
+    
+    </section>
+  </main>
+</body>
+</html>
