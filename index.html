@@ -118,6 +118,12 @@
       outline: none;
     }
 
+    .cta-button.is-pressed {
+      transform: translateY(0.3rem) scale(0.985);
+      box-shadow: 0 0.12rem 0 0 var(--shadow);
+      background: linear-gradient(180deg, #e9edf1, #dde3e8);
+    }
+
     .contacts {
       margin-top: 2rem;
       padding: 1.25rem 1rem 0;
@@ -159,6 +165,12 @@
       box-shadow: 0 0.18rem 0 0 var(--shadow);
       background: #f7f9fb;
       outline: none;
+    }
+
+    .contact-link.is-pressed {
+      transform: translateY(0.28rem) scale(0.96);
+      box-shadow: 0 0.08rem 0 0 var(--shadow);
+      background: #edf1f5;
     }
 
     .contact-link svg {
@@ -230,5 +242,35 @@
     
     </section>
   </main>
+  <script>
+    const CLICK_DELAY_MS = 500;
+
+    document.querySelectorAll('a[href]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const href = link.getAttribute('href');
+
+        if (!href || href.startsWith('#')) {
+          return;
+        }
+
+        event.preventDefault();
+        link.classList.add('is-pressed');
+
+        window.setTimeout(() => {
+          const target = link.getAttribute('target');
+
+          if (target === '_blank') {
+            window.open(href, '_blank', 'noopener');
+          } else {
+            window.location.href = href;
+          }
+
+          window.setTimeout(() => {
+            link.classList.remove('is-pressed');
+          }, 120);
+        }, CLICK_DELAY_MS);
+      });
+    });
+  </script>
 </body>
 </html>
