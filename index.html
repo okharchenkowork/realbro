@@ -319,6 +319,67 @@
       text-transform: uppercase;
     }
 
+    @media (max-width: 699px) {
+      .page {
+        padding-top: 0.12rem;
+      }
+
+      .stack {
+        padding: 0 0.8rem;
+      }
+
+      .stack.decor::before {
+        top: 0.1rem;
+        right: 2rem;
+        width: 8.1rem;
+        height: 8.1rem;
+        opacity: 0.18;
+      }
+
+      .topbar {
+        margin-bottom: 0.2rem;
+        min-height: 0.35rem;
+      }
+
+      .hero {
+        gap: 0.95rem;
+        margin-bottom: 0.95rem;
+      }
+
+      .hero-copy::before {
+        top: 0.95rem;
+        width: 8.8rem;
+        height: 5.7rem;
+      }
+
+      .hero-title {
+        max-width: 11rem;
+        font-size: clamp(3.45rem, 18vw, 4.9rem);
+        line-height: 0.84;
+      }
+
+      .vertical-note {
+        font-size: 0.64rem;
+        letter-spacing: 0.2em;
+        padding-top: 0.15rem;
+        padding-right: 0;
+        justify-self: end;
+        transform: rotate(180deg) translateX(-0.55rem);
+      }
+
+      .ticker {
+        margin-top: 0.55rem;
+        margin-bottom: 0.65rem;
+      }
+
+      .ticker-text {
+        padding: 0.72rem 1rem;
+        font-size: 0.7rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+      }
+    }
+
     @media (min-width: 700px) {
       .page {
         min-height: auto;
