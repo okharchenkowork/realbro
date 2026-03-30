@@ -53,19 +53,6 @@
       padding: 0 0.95rem;
     }
 
-    .stack.decor::before {
-      content: "";
-      position: absolute;
-      top: 1.2rem;
-      right: 4.15rem;
-      width: 11.6rem;
-      height: 11.6rem;
-      background: url("77.png") center/contain no-repeat;
-      border-radius: 0 0 5rem 5rem;
-      opacity: 0.3;
-      pointer-events: none;
-    }
-
     .stack.decor::after {
       content: none;
       pointer-events: none;
@@ -84,29 +71,15 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: auto 1fr;
       gap: 1rem;
-      align-items: start;
-      margin-bottom: 1rem;
+      align-items: center;
+      margin-bottom: 1.15rem;
     }
 
     .hero-copy {
       position: relative;
-      padding-top: 0.25rem;
-    }
-
-    .hero-copy::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 1.15rem;
-      width: 12.4rem;
-      height: 6.7rem;
-      background: #cfcfcf;
-      transform: rotate(-3.2deg);
-      border-radius: 0.4rem;
-      box-shadow: 0 0.4rem 0 rgba(17, 17, 17, 0.06);
-      z-index: -1;
+      padding-top: 0;
     }
 
     .hero-title {
@@ -119,18 +92,22 @@
       text-transform: uppercase;
     }
 
+    .hero-logo {
+      display: block;
+      width: min(100%, 8.2rem);
+      height: auto;
+      filter: brightness(0);
+    }
+
     .vertical-note {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      font-size: 0.76rem;
+      max-width: 12rem;
+      font-size: 1rem;
       font-weight: 900;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
-      align-self: stretch;
-      display: flex;
-      align-items: flex-end;
-      padding-top: 0.4rem;
+      line-height: 1.22;
+      text-wrap: balance;
     }
 
     .ticker {
@@ -206,16 +183,15 @@
 
     .tip-button {
       position: relative;
-      display: grid;
-      grid-template-columns: 1fr auto;
+      display: flex;
       align-items: center;
-      gap: 0.8rem;
-      min-height: 4.35rem;
-      padding: 0.9rem 1rem 0.9rem 1.1rem;
+      justify-content: flex-start;
+      min-height: 7.2rem;
+      padding: 1.1rem 1.2rem 1.1rem 1.15rem;
       border: 2px solid var(--line);
-      border-radius: 1rem 2rem 1rem 1rem;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 0.55rem 0 rgba(17, 17, 17, 0.18);
+      border-radius: 1.35rem;
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 0.65rem 0 rgba(17, 17, 17, 0.18);
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       overflow: hidden;
     }
@@ -223,23 +199,25 @@
     .tip-button::before {
       content: "";
       position: absolute;
-      inset: 0 auto 0 0;
-      width: 0.6rem;
+      inset: auto 0 0 0;
+      height: 0.65rem;
       background: #d9d9d9;
     }
 
     .tip-button::after {
-      content: ">";
+      content: "₴";
       display: grid;
       place-items: center;
-      width: 2.4rem;
-      height: 2.4rem;
+      flex: 0 0 auto;
+      width: 4.6rem;
+      height: 4.6rem;
       border: 2px solid var(--line);
-      border-radius: 0.8rem;
+      border-radius: 1.2rem;
       background: #ffffff;
-      font-size: 1rem;
+      font-size: 2rem;
       font-weight: 900;
       line-height: 1;
+      box-shadow: 0 0.2rem 0 rgba(17, 17, 17, 0.08);
     }
 
     .tip-button:hover,
@@ -256,11 +234,26 @@
       background: #f1f1f1;
     }
 
-    .tip-text {
-      font-size: 1.08rem;
+    .tip-copy {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      transform: translate(-50%, -50%);
+      width: calc(100% - 8.4rem);
+      pointer-events: none;
+    }
+
+    .tip-options {
+      font-size: 1.34rem;
       font-weight: 950;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.01em;
+      line-height: 1.04;
+      text-align: center;
       text-transform: uppercase;
+      color: var(--text);
     }
 
     .contact-row {
@@ -334,22 +327,8 @@
       }
 
       .hero {
-        gap: 0.95rem;
-        margin-bottom: 0.95rem;
-      }
-
-      .stack.decor::before {
-        top: 0.1rem;
-        right: 2rem;
-        width: 8.7rem;
-        height: 8.7rem;
-        opacity: 0.18;
-      }
-
-      .hero-copy::before {
-        top: 0.95rem;
-        width: 8.8rem;
-        height: 5.7rem;
+        gap: 0.8rem;
+        margin-bottom: 0.9rem;
       }
 
       .hero-title {
@@ -358,13 +337,15 @@
         line-height: 0.84;
       }
 
+      .hero-logo {
+        width: min(100%, 6.4rem);
+      }
+
       .vertical-note {
-        font-size: 0.64rem;
-        letter-spacing: 0.2em;
-        padding-top: 0.15rem;
-        padding-right: 0;
-        justify-self: end;
-        transform: rotate(180deg) translateX(-0.55rem);
+        max-width: 7.4rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        line-height: 1.18;
       }
 
       .ticker {
@@ -377,6 +358,23 @@
         font-size: 0.7rem;
         font-weight: 900;
         letter-spacing: 0.1em;
+      }
+
+      .tip-button {
+        min-height: 5.8rem;
+        padding: 0.9rem 1rem 0.9rem 0.95rem;
+      }
+
+      .tip-button::after {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.5rem;
+      }
+
+      .tip-options {
+        font-size: 1.04rem;
+        letter-spacing: 0.01em;
+        line-height: 1.02;
       }
     }
 
@@ -392,8 +390,8 @@
       }
 
       .hero {
-        grid-template-columns: 1fr auto;
-        align-items: start;
+        grid-template-columns: auto 1fr;
+        align-items: center;
       }
     }
   </style>
@@ -407,10 +405,10 @@
 
       <section class="hero">
         <div class="hero-copy">
-          <h1 class="hero-title">REAL<br><span class="accent">BRO</span></h1>
+          <img class="hero-logo" src="1.png" alt="RealBRO">
         </div>
 
-        <div class="vertical-note">Specialty Coffee</div>
+        <div class="vertical-note">100 % arabica specialty coffee</div>
       </section>
     </div>
 
@@ -431,13 +429,9 @@
 
         <div class="tip-list">
           <a class="tip-button" href="https://example.com/latest-video" target="_blank" rel="noreferrer">
-            <span class="tip-text">2 грн</span>
-          </a>
-          <a class="tip-button" href="https://example.com/subscribe" target="_blank" rel="noreferrer">
-            <span class="tip-text">5 грн</span>
-          </a>
-          <a class="tip-button" href="https://example.com/contact" target="_blank" rel="noreferrer">
-            <span class="tip-text">Інша сума</span>
+            <span class="tip-copy">
+              <span class="tip-options">2 грн   /   5 грн   /   інша сума</span>
+            </span>
           </a>
         </div>
       </section>
