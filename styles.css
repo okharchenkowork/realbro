@@ -78,34 +78,39 @@ a {
   align-items: flex-start;
   padding-top: 0;
   flex: 0 0 auto;
+  width: clamp(5rem, 19vw, 7.2rem);
+  min-width: 0;
 }
 
 .hero-lockup {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
-  flex: 0 1 auto;
+  justify-content: space-between;
+  gap: clamp(1rem, 5vw, 3.2rem);
+  width: 100%;
+  flex: 1 1 auto;
   min-width: 0;
 }
 
 .hero-logo {
   display: block;
-  width: auto;
-  height: 8.2rem;
-  max-width: none;
+  width: 100%;
+  height: clamp(4.3rem, 13.4vw, 6rem);
   object-fit: contain;
   object-position: left top;
   filter: brightness(0);
+  opacity: 0.5;
 }
 
 .hero-text-image {
   display: block;
-  width: auto;
-  max-width: calc(100% - 5.75rem);
-  height: 8.2rem;
-  flex: 0 1 auto;
+  width: 100%;
+  height: clamp(5.8rem, 18vw, 8.2rem);
+  flex: 0 1 clamp(14rem, 58vw, 26rem);
+  margin-left: auto;
+  min-width: 0;
   object-fit: contain;
-  object-position: left top;
+  object-position: right top;
 }
 
 .ticker {
@@ -415,16 +420,18 @@ a {
 
   .hero-lockup {
     gap: 0.25rem;
+    justify-content: flex-start;
   }
 
   .hero-logo {
-    height: 6.9rem;
+    height: clamp(4rem, 18vw, 5.2rem);
   }
 
   .hero-text-image {
-    max-width: calc(100% - 4.25rem);
-    height: 6.9rem;
-    object-position: left top;
+    height: clamp(5.25rem, 24vw, 6.9rem);
+    flex: 1 1 auto;
+    margin-left: 0;
+    object-position: right top;
   }
 
   .ticker {
